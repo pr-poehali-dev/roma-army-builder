@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "GET /save без токена → 401",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "Нет токена"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST /save без токена → 401",
+      "method": "POST",
+      "path": "/",
+      "body": "{}",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "Нет токена"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

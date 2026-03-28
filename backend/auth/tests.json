@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "GET /auth/me без токена → 401",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "Нет токена"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST /auth/google с пустым id_token → 400",
+      "method": "POST",
+      "path": "/",
+      "body": "{}",
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Нет id_token"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
